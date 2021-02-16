@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+</head>
+<body>
+
+<style>
+    li{
+        transition-duration: 3s;
+    }
+
+    .s1{
+        background-color: red;
+        color: beige;
+        transform: translateX(500px);
+    }
+    .blue{
+        font-style: italic;
+        font-weight: bold;
+        color: blue;
+    }
+</style>
+
+<ul class="s1">
+    <li>AAA</li>
+    <li id = "target">BBB</li>
+    <li class = "blue">CCC</li>
+    <li class = "blue">DDD</li>
+</ul>
+
+<script>
+
+    // id --- #id
+    console.log(document.querySelector("#target"));
+
+    //class --- .class
+    console.log(document.querySelectorAll(".blue"));
+
+
+    // var obj = document.querySelectorAll("li");
+    //
+    // console.dir(obj);
+    //
+    // for (var i = 0; i < obj.length; i++) {
+    //
+    //     obj[i].setAttribute("class", "s1");
+    // }
+
+
+
+</script>
+</body>
+</html>
