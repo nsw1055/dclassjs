@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function makeGreeting(name) {
+        var greeting = "안녕! ";
+
+        return function () {
+            console.log(greeting + name);
+        };
+
+
+    }
+
+    var g1 = makeGreeting("홍길동");
+    var g2 = makeGreeting("김철수");
+
+    g1();
+    g2();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+
+<script>
+    function doA() {
+        const arr = document.querySelectorAll("button");
+
+        for (var i = 0; i < arr.length; i++) {
+            //즉시 실행 함수
+            (function (num) {
+                console.log(num);
+                arr[num].addEventListener("click", function () {
+                    alert(num);
+                }, false);
+            })(i);
+        }
+    }
+    doA();
+</script>
+
+
+</body>
+</html>

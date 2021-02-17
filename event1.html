@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .outer{
+        width: 300px;
+        height: 500px;
+        padding: 100px;
+        background-color: aquamarine;
+    }
+    .inner{
+        background-color: coral;
+    }
+</style>
+
+
+<!--버블링 안쪽부터 실행 (default)-->
+<!--캡처링 바깥쪽부터 실행-->
+<!--propagation
+모든 이벤트 처리 => event 파라미터
+event.stopPropagation(); 원하는 동작 후 버블링 방지
+event.preventDefault(); 이벤트의 기본동작을 방지
+
+-->
+<div class="outer" onclick="outer(event)">
+    <div class="inner" onclick="inner(event)">
+        <h1 onclick="h1(event)">CLICK</h1>
+    </div>
+</div>
+
+
+
+<!--<script>-->
+<!--    //이벤트가 발생(DOM 구조가 완성)하면 function 을 실행해줘-->
+<!--    window.addEventListener('DOMContentLoaded', function(event){-->
+
+<!--    const obj = document.querySelector("h1");-->
+<!--    console.log(obj);-->
+
+<!--    });-->
+
+<!--</script>-->
+
+<script>
+    function outer(){
+        console.log("outer");
+    }
+    function inner(){
+        console.log("inner");
+    }
+    function h1(event){
+        console.log("h1" + event);
+        event.stopPropagation()
+    }
+
+</script>
+
+<h1>Hello</h1>
+</body>
+</html>
